@@ -1,16 +1,15 @@
 package com.jaberrantisi.backend.model;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.ColumnDefault;
 
 import java.time.Instant;
 
-@Getter
-@Setter
-@Entity
-@Table(name = "tf_files")
+
+@Entity @Table(name = "tf_files")
+@Data @Builder
+@NoArgsConstructor @AllArgsConstructor
 public class TfFile {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)

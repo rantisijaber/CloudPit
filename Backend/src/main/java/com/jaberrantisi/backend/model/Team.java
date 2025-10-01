@@ -1,18 +1,17 @@
 package com.jaberrantisi.backend.model;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.ColumnDefault;
 
 import java.time.Instant;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
-@Getter
-@Setter
-@Entity
-@Table(name = "teams")
+
+@Entity @Table(name = "teams")
+@Data @Builder
+@NoArgsConstructor @AllArgsConstructor
 public class Team {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)

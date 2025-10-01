@@ -1,16 +1,15 @@
 package com.jaberrantisi.backend.model;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.ColumnDefault;
 
 import java.time.Instant;
 
-@Getter
-@Setter
-@Entity
-@Table(name = "s3_buckets")
+
+@Entity @Table(name = "s3_buckets")
+@Data @Builder
+@NoArgsConstructor @AllArgsConstructor
 public class S3Bucket {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)

@@ -1,28 +1,27 @@
 package com.jaberrantisi.backendlambda.service;
 
-import com.jaberrantisi.backendlambda.model.UserFile;
+import com.jaberrantisi.backendlambda.model.FileUpload;
 import org.springframework.stereotype.Service;
 import software.amazon.awssdk.enhanced.dynamodb.DynamoDbEnhancedClient;
 import software.amazon.awssdk.enhanced.dynamodb.DynamoDbTable;
 import software.amazon.awssdk.enhanced.dynamodb.TableSchema;
 
 @Service
-public class UserFileService {
+public class FileUploadService {
 
     private final DynamoDbEnhancedClient dynamoDbClient;
 
-    public UserFileService(DynamoDbEnhancedClient dynamoDbClient) {
+    public FileUploadService(DynamoDbEnhancedClient dynamoDbClient) {
         this.dynamoDbClient = dynamoDbClient;
     }
 
-    public void saveToDynamo(String userId, String fileId, String s3Key) {
-        DynamoDbTable<UserFile> userFileTable =
-                dynamoDbClient.table("userFiles", TableSchema.fromBean(UserFile.class));
+    public void saveToDynamo(String date, String fileId) {
+        DynamoDbTable<FileUpload> userFileTable =
+                dynamoDbClient.table("file-uploads", TableSchema.fromBean(FileUpload.class));
 
-        UserFile userFile = UserFile.builder()
-                .userId(userId)
+        FileUpload userFile = FileUpload.builder()
+                .date(date)
                 .fileId(fileId)
-                .s3Key(s3Key)
                 .build();
 
         userFileTable.putItem(userFile);

@@ -13,14 +13,13 @@ import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbSortK
 @Builder @Setter
 @NoArgsConstructor @AllArgsConstructor
 @DynamoDbBean
-public class UserFile {
-    private String userId;
+public class FileUpload {
+    private String date;
     private String fileId;
-    private String s3Key;
 
     @DynamoDbPartitionKey
-    public String getUserId() {
-        return userId;
+    public String getDate() {
+        return date;
     }
 
     @DynamoDbSortKey

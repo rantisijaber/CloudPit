@@ -19,8 +19,7 @@ CloudPit is a serverless cloud cost visualizer that empowers users to track and 
 - AWS Lambda
 - Amazon API Gateway
 - Amazon DynamoDB
-- Amazon S3
-- Amazon CloudWatch
+- Amazon EventBridge
 
 ## Cloud Architecture
 
@@ -31,6 +30,5 @@ CloudPit leverages a fully serverless architecture on AWS, combining Spring Boot
 2. API Gateway routes authenticated requests to Lambda functions
 3. Spring Cloud Functions invokes Spring Boot business logic
 4. User-specific cost data is stored in DynamoDB
-5. CSV reports are generated and stored encrypted in S3
-6. Users can download reports directly from the frontend
+5. Users can download reports directly from the frontend
 

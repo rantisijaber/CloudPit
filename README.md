@@ -1,6 +1,7 @@
 # CloudPit
 
 CloudPit is a serverless cloud cost visualizer that empowers users to track and analyze their AWS spending with effortless transparency. Built on Spring Boot with Spring Cloud Functions integrated with AWS Lambda, API Gateway, and DynamoDB, CloudPit eliminates infrastructure overhead so you can focus on optimizing your cloud budget, not managing servers.
+![CloudPit Architecture](CloudPit-Architecture.png)
 
 ## Features
 
